@@ -1,13 +1,12 @@
-import "./Header.css"
-import logo from "./images/favicon512.png"
+import "./Header.css";
+import Logo from "../logo/Logo";
 
 const Header = () => {
     return (
         <header className="main-header">
-            <img id="logo" src={logo} alt="Logo" />
-            <h1>My App</h1>
+            <Logo />
         </header>
     );
-}
+};
 
 export default Header;

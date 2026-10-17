@@ -1,0 +1,9 @@
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--color-accent);
+}

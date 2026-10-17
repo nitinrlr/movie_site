@@ -1,5 +1,8 @@
-.main-header h1 {color: green;}
-
-#logo {
-    max-width: 200px
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px 5%;
+    background-color: var(--color-bg-alt);
 }
