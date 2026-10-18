@@ -6,3 +6,10 @@
     padding: 20px 5%;
     background-color: var(--color-bg-alt);
 }
+
+@media (max-width: 850px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

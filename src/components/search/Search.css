@@ -6,3 +6,9 @@
     border-radius: 20px;
     color: var(--color-text);
 }
+
+@media (max-width: 850px) {
+    .search {
+        width: 100%;
+    }
+}
