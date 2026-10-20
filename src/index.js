@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {HashRouter, Routes, Route} from "react-router-dom";
 import './index.css';
 import Layout from "./Layout";
 import Header from "./components/header/Header";
 import Home from "./pages/home/Home";
 import Browse from "./pages/browse/Browse";
-
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="movies" element={<Movies />} />
+          <Route path="browse" element={<Browse />} />
         </Route>
       </Routes>
     </HashRouter>
