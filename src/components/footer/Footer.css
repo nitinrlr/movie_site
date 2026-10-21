@@ -1,0 +1,30 @@
+.main-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 5%;
+    background-color: var(--color-bg-alt);
+}
+
+.main-footer p {
+    color: var(--color-text-muted);
+    font-size: 13px;
+}
+
+.main-footer .socials {
+    display: flex;
+    gap: 12px;
+}
+
+.main-footer .socials img {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 850px) {
+    .main-footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

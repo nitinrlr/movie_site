@@ -1,0 +1,93 @@
+.login-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 5%;
+    min-height: 70vh;
+    background-color: var(--color-bg-dark);
+    background-image: url("./images/login_backgrnd.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 35px 30px;
+    text-align: center;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+}
+
+.login-card .logo {
+    display: inline-block;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.login-card label {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+}
+
+.login-card input {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: var(--color-text);
+    margin-bottom: 18px;
+}
+
+.login-card .forgot {
+    color: var(--color-accent);
+    font-size: 12px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.login-card .sign-in {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.login-card .divider {
+    color: var(--color-text-muted);
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+.login-card .signup {
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+.login-card .signup a {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+@media (max-width: 850px) {
+    .login-main {
+        padding: 40px 5%;
+        min-height: auto;
+    }
+
+    .login-card {
+        padding: 25px 20px;
+    }
+}

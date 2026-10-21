@@ -1,10 +1,11 @@
 import "./Logo.css";
+import {Link} from "react-router-dom";
 
 const Logo = () => {
     return (
-        <a href="#home" className="logo">
+        <Link to="/" className="logo">
             MOVIE<span>BUZZ</span>
-        </a>
+        </Link>
     );
 };
 
