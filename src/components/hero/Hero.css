@@ -1,0 +1,45 @@
+.hero {
+    position: relative;
+    margin: 20px 0 40px;
+    padding: 40px 12%;
+    background-color: var(--color-bg-dark);
+}
+
+.hero .hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-accent);
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.hero .hero-arrow-prev {
+    left: 20px;
+}
+
+.hero .hero-arrow-next {
+    right: 20px;
+}
+
+.hero .hero-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.hero .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-border);
+}
+
+.hero .dot.active {
+    background-color: var(--color-accent);
+}

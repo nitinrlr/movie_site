@@ -1,0 +1,13 @@
+.movie-card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.movie-card .movie-rating {
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 8px;
+}
