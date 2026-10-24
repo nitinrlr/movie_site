@@ -2,7 +2,7 @@ import "./HeroSlide.css";
 import {Link} from "react-router-dom";
 
 const HeroSlide = (props) => {
-    // only the first slide shows until the slideshow works
+    // Hero decides which slide is showing and hides the rest
     let slideClass = "hero-slide";
 
     if (props.hidden) {

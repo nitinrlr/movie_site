@@ -1,13 +1,33 @@
 import "./Hero.css";
+import {useState} from "react";
 import HeroSlide from "../hero-slide/HeroSlide";
 import jparkHero from "./images/jpark-hero.webp";
 import duneHero from "./images/dune-hero.png";
 import avengersHero from "./images/avengers-hero.png";
 
 const Hero = () => {
+    // which slide is showing: 0, 1 or 2
+    const [current, setCurrent] = useState(0);
+
+    const nextSlide = () => {
+        if (current === 2) {
+            setCurrent(0);
+        } else {
+            setCurrent(current + 1);
+        }
+    };
+
+    const prevSlide = () => {
+        if (current === 0) {
+            setCurrent(2);
+        } else {
+            setCurrent(current - 1);
+        }
+    };
+
     return (
         <section className="hero">
-            <button className="hero-arrow hero-arrow-prev" aria-label="Previous slide">&#8249;</button>
+            <button className="hero-arrow hero-arrow-prev" aria-label="Previous slide" onClick={prevSlide}>&#8249;</button>
             <HeroSlide
                 image={jparkHero}
                 title="Jurassic Park"
@@ -15,6 +35,7 @@ const Hero = () => {
                 rating="9.0"
                 link="/movie"
                 linkText="Details"
+                hidden={current !== 0}
             />
             <HeroSlide
                 image={duneHero}
@@ -23,7 +44,7 @@ const Hero = () => {
                 rating="8.0"
                 link="/browse"
                 linkText="More Sci-Fi"
-                hidden={true}
+                hidden={current !== 1}
             />
             <HeroSlide
                 image={avengersHero}
@@ -32,13 +53,13 @@ const Hero = () => {
                 rating="9.2"
                 link="/browse"
                 linkText="More Action"
-                hidden={true}
+                hidden={current !== 2}
             />
-            <button className="hero-arrow hero-arrow-next" aria-label="Next slide">&#8250;</button>
+            <button className="hero-arrow hero-arrow-next" aria-label="Next slide" onClick={nextSlide}>&#8250;</button>
             <div className="hero-dots">
-                <span className="dot active"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
+                <span className={current === 0 ? "dot active" : "dot"}></span>
+                <span className={current === 1 ? "dot active" : "dot"}></span>
+                <span className={current === 2 ? "dot active" : "dot"}></span>
             </div>
         </section>
     );

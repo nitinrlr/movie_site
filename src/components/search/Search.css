@@ -7,7 +7,7 @@
     color: var(--color-text);
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     .search {
         width: 100%;
     }

@@ -7,7 +7,7 @@
     background-color: var(--color-bg-alt);
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     .main-header {
         flex-direction: column;
         gap: 15px;
