@@ -1,13 +1,32 @@
 {
   "files": {
-    "main.css": "/movie_site/static/css/main.8dc979a8.css",
-    "main.js": "/movie_site/static/js/main.a1e9fd93.js",
+    "main.css": "/movie_site/static/css/main.ceb0bb15.css",
+    "main.js": "/movie_site/static/js/main.e53e64a3.js",
+    "static/media/avengers-hero.png": "/movie_site/static/media/avengers-hero.a252002f84d52c97ee89.png",
+    "static/media/JP_backgrnd.png": "/movie_site/static/media/JP_backgrnd.0bf61db3ae82b733cda0.png",
+    "static/media/dune-hero.png": "/movie_site/static/media/dune-hero.d7239c9e4e8fc577921c.png",
+    "static/media/theater.png": "/movie_site/static/media/theater.9b813ef04ed5eb892604.png",
+    "static/media/lostworld.jpg": "/movie_site/static/media/lostworld.2c352c875db652d5c3a9.jpg",
+    "static/media/action.png": "/movie_site/static/media/action.18f0c4fe10c8e41cb8d4.png",
+    "static/media/sci-fi.png": "/movie_site/static/media/sci-fi.d33984a006ab3dfd15f5.png",
+    "static/media/login_backgrnd.png": "/movie_site/static/media/login_backgrnd.6c4970e967813e2dcfe5.png",
+    "static/media/comedy.png": "/movie_site/static/media/comedy.b6a022ebc103b64f29c6.png",
+    "static/media/jpark-hero.webp": "/movie_site/static/media/jpark-hero.3a0ffa996174d5233bda.webp",
+    "static/media/avngers.jpg": "/movie_site/static/media/avngers.523b0b968b4f33c9bf94.jpg",
+    "static/media/joker.jpg": "/movie_site/static/media/joker.c106696c43515a6845e9.jpg",
+    "static/media/s-man.jpg": "/movie_site/static/media/s-man.565629700463edaa5903.jpg",
+    "static/media/jpark.jpg": "/movie_site/static/media/jpark.22e19e18d4aabae9103f.jpg",
+    "static/media/jaws.jpg": "/movie_site/static/media/jaws.51a019e56b9f69e476e2.jpg",
+    "static/media/dune.jpg": "/movie_site/static/media/dune.053d45652d2bd9bf620d.jpg",
+    "static/media/jaws2.jpg": "/movie_site/static/media/jaws2.12017600b6461252804b.jpg",
+    "static/media/instagram.svg": "/movie_site/static/media/instagram.675445953d01132d1f29cd59349acdcf.svg",
     "index.html": "/movie_site/index.html",
-    "main.8dc979a8.css.map": "/movie_site/static/css/main.8dc979a8.css.map",
-    "main.a1e9fd93.js.map": "/movie_site/static/js/main.a1e9fd93.js.map"
+    "static/media/x.svg": "/movie_site/static/media/x.fecf5dd7cac8697bc838177ac3fda15c.svg",
+    "main.ceb0bb15.css.map": "/movie_site/static/css/main.ceb0bb15.css.map",
+    "main.e53e64a3.js.map": "/movie_site/static/js/main.e53e64a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.8dc979a8.css",
-    "static/js/main.a1e9fd93.js"
+    "static/css/main.ceb0bb15.css",
+    "static/js/main.e53e64a3.js"
   ]
 }
