@@ -1,0 +1,92 @@
+.about-hero {
+    text-align: center;
+    padding: 90px 15%;
+    background-color: var(--color-bg-dark);
+    background-image: url("./images/theater.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.about-hero p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.mission {
+    text-align: center;
+    padding: 40px 5%;
+}
+
+.mission .mission-row {
+    display: flex;
+    gap: 25px;
+}
+
+.mission .mission-row .mission-card {
+    flex: 1;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 25px 5%;
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.join {
+    text-align: center;
+    padding: 50px 15%;
+}
+
+.join h2 {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.join p {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 15px 0 25px;
+}
+
+.join .join-button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    font-weight: bold;
+    padding: 12px 26px;
+    border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+    .about-hero {
+        padding: 40px 8%;
+    }
+
+    .mission {
+        padding: 30px 8%;
+    }
+
+    .mission .mission-row {
+        flex-direction: column;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .join {
+        padding: 40px 8%;
+    }
+
+    .join h2 {
+        font-size: 18px;
+    }
+}

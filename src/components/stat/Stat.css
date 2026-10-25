@@ -1,0 +1,12 @@
+.stat {
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 30px;
+}
+
+.stat p {
+    font-size: 13px;
+    margin-top: 4px;
+}

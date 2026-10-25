@@ -6,13 +6,6 @@
     padding: 30px 5% 20px;
 }
 
-.browse-top h1 {
-    color: var(--color-accent);
-    text-transform: uppercase;
-    font-size: 28px;
-    letter-spacing: 1px;
-}
-
 .browse-top select {
     background-color: var(--color-bg-alt);
     border: 1px solid var(--color-border);
@@ -76,10 +69,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
-    }
-
-    .browse-top h1 {
-        font-size: 22px;
     }
 
     .genre-filter ul {

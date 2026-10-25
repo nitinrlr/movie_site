@@ -14,7 +14,7 @@ const Browse = () => {
     return (
         <div className="browse">
             <section className="browse-top">
-                <h1>Explore Movies</h1>
+                <h1 className="page-title">Explore Movies</h1>
                 <select id="sort">
                     <option value="newest">Sort: Newest</option>
                     <option value="rating">Sort: Rating</option>

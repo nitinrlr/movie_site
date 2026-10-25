@@ -34,11 +34,23 @@ img {
   max-width: 100%;
 }
 
-/* yellow headings used on several pages */
+.page-title {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
 .section-title {
   color: var(--color-accent);
   text-transform: uppercase;
   font-size: 18px;
   letter-spacing: 1px;
   margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .page-title {
+    font-size: 22px;
+  }
 }
