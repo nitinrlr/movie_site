@@ -33,3 +33,12 @@ img {
   display: block;
   max-width: 100%;
 }
+
+/* yellow headings used on several pages */
+.section-title {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}

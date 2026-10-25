@@ -16,7 +16,7 @@ const Home = () => {
         <div className="home">
             <Hero />
             <section className="buzzing">
-                <h2 className="row-title">Buzzing Right Now</h2>
+                <h2 className="section-title">Buzzing Right Now</h2>
                 <div className="movie-row">
                     <MovieCard image={avengers} title="The Avengers" rating="9.2" link="/movie" />
                     <MovieCard image={jaws} title="Jaws" rating="8.3" link="/browse" />
@@ -27,7 +27,7 @@ const Home = () => {
                 </div>
             </section>
             <section className="genres">
-                <h2 className="row-title">Famous Genres</h2>
+                <h2 className="section-title">Famous Genres</h2>
                 <div className="genre-row">
                     <GenreCard image={action} name="Action" tagline="Lots of Thrills" />
                     <GenreCard image={comedy} name="Comedy" tagline="Lots of Laughter" />

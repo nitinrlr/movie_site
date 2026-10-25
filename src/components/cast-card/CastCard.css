@@ -1,0 +1,27 @@
+.cast-card {
+    text-align: center;
+}
+
+.cast-card .cast-photo {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-accent);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cast-card h3 {
+    font-size: 14px;
+}
+
+.cast-card .cast-role {
+    color: var(--color-text-muted);
+    font-size: 12px;
+    margin-top: 4px;
+}
