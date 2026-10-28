@@ -1,0 +1,15 @@
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: block;
+    }
+}

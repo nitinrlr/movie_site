@@ -8,8 +8,9 @@
 }
 
 @media (max-width: 900px) {
+    /* logo and toggle share the top row, menu and search wrap below */
     .main-header {
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 15px;
     }
 }

@@ -1,14 +1,20 @@
 import "./Navigation.css";
 import {NavLink} from "react-router-dom";
 
-const Navigation = () => {
+const Navigation = (props) => {
+    let navClass = "main-nav";
+
+    if (props.open) {
+        navClass = "main-nav open";
+    }
+
     return (
-        <nav className="main-nav">
+        <nav className={navClass}>
             <ul>
-                <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to="/browse">Browse</NavLink></li>
-                <li><NavLink to="/about">About Us</NavLink></li>
-                <li><NavLink to="/login">Login</NavLink></li>
+                <li><NavLink to="/" onClick={props.onLinkClick}>Home</NavLink></li>
+                <li><NavLink to="/browse" onClick={props.onLinkClick}>Browse</NavLink></li>
+                <li><NavLink to="/about" onClick={props.onLinkClick}>About Us</NavLink></li>
+                <li><NavLink to="/login" onClick={props.onLinkClick}>Login</NavLink></li>
             </ul>
         </nav>
     );

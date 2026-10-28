@@ -74,6 +74,19 @@
     border-radius: 10px;
 }
 
+.movie-body .trailer {
+    margin-bottom: 40px;
+}
+
+.movie-body .trailer iframe {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 10px;
+}
+
 .movie-body .synopsis p {
     color: var(--color-text-muted);
     line-height: 1.7;

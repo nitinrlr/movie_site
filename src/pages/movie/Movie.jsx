@@ -29,6 +29,15 @@ const Movie = () => {
             </section>
             <div className="movie-body">
                 <div className="movie-main">
+                    <section className="trailer">
+                        <h2 className="section-title">Watch the Trailer</h2>
+                        <iframe
+                            src="https://www.youtube.com/embed/QWBKEmWWL38"
+                            title="Jurassic Park official trailer"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                        ></iframe>
+                    </section>
                     <section className="synopsis">
                         <h2 className="section-title">Synopsis</h2>
                         <p>
