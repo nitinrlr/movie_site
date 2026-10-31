@@ -1,0 +1,84 @@
+.contact {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px 5% 50px;
+    text-align: center;
+}
+
+.contact .contact-intro {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.contact-form {
+    text-align: left;
+}
+
+.contact-form p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.contact-form label {
+    color: var(--color-text-muted);
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.contact-form input, .contact-form textarea {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .form-bottom {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-form .form-bottom button {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 26px;
+    cursor: pointer;
+}
+
+.contact-form .form-bottom .result {
+    margin: 0;
+    font-size: 14px;
+}
+
+.contact-form .result.success {
+    color: var(--color-success);
+}
+
+.contact-form .result.error {
+    color: var(--color-error);
+}
+
+@media (max-width: 900px) {
+    .contact {
+        padding: 10px 8% 40px;
+    }
+
+    .contact-form .form-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+}

@@ -7,6 +7,8 @@
   --color-accent: #f2b705;
   --color-text: #ffffff;
   --color-text-muted: #a8a3b8;
+  --color-success: #4caf50;
+  --color-error: #e5534b;
 }
 
 * {

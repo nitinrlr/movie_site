@@ -2,6 +2,7 @@ import "./About.css";
 import {Link} from "react-router-dom";
 import MissionCard from "../../components/mission-card/MissionCard";
 import Stat from "../../components/stat/Stat";
+import ContactForm from "../../components/contact-form/ContactForm";
 
 const About = () => {
     return (
@@ -46,6 +47,7 @@ const About = () => {
                 </p>
                 <Link to="/login" className="join-button">Sign Up For Free</Link>
             </section>
+            <ContactForm />
         </div>
     );
 };
