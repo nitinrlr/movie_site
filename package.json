@@ -10,9 +10,11 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "react-hot-toast": "^2.6.1",
     "react-router-dom": "^7.18.4",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
+    "react-tooltip": "^6.0.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

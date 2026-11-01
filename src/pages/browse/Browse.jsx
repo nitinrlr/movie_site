@@ -1,4 +1,5 @@
 import "./Browse.css";
+import {Tooltip} from "react-tooltip";
 import Pill from "../../components/pill/Pill";
 import MovieCard from "../../components/movie-card/MovieCard";
 import dune from "../../images/posters/dune.jpg";
@@ -23,16 +24,17 @@ const Browse = () => {
             </section>
             <nav className="genre-filter">
                 <ul>
-                    <Pill name="All" active={true} />
-                    <Pill name="Action" />
-                    <Pill name="Comedy" />
-                    <Pill name="Drama" />
-                    <Pill name="Sci-Fi" />
-                    <Pill name="Horror" />
-                    <Pill name="Thriller" />
-                    <Pill name="Romance" />
-                    <Pill name="Animation" />
+                    <Pill name="All" tip="Every movie in our catalog" active={true} />
+                    <Pill name="Action" tip="Explosions, chases, and big fights" />
+                    <Pill name="Comedy" tip="Movies made to make you laugh" />
+                    <Pill name="Drama" tip="Serious, character driven stories" />
+                    <Pill name="Sci-Fi" tip="Space, science, and the future" />
+                    <Pill name="Horror" tip="Scary movies best watched with the lights on" />
+                    <Pill name="Thriller" tip="Suspense that keeps you on the edge of your seat" />
+                    <Pill name="Romance" tip="Love stories and happy endings" />
+                    <Pill name="Animation" tip="Animated films for all ages" />
                 </ul>
+                <Tooltip id="pill-tip" />
             </nav>
             <section className="movie-grid">
                 <MovieCard image={dune} title="Dune: Part Two" year="2024" genre="Sci-Fi" rating="8.0" link="/movie" />

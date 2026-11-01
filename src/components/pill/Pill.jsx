@@ -9,7 +9,14 @@ const Pill = (props) => {
 
     return (
         <li>
-            <button type="button" className={pillClass}>{props.name}</button>
+            <button
+                type="button"
+                className={pillClass}
+                data-tooltip-id="pill-tip"
+                data-tooltip-content={props.tip}
+            >
+                {props.name}
+            </button>
         </li>
     );
 };

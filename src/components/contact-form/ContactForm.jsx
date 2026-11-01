@@ -1,5 +1,6 @@
 import "./ContactForm.css";
 import {useState} from "react";
+import toast from "react-hot-toast";
 
 //https://web3forms.com/
 const ContactForm = () => {
@@ -27,14 +28,17 @@ const ContactForm = () => {
             if (response.ok) {
                 setResult("Thanks! Your message was sent.");
                 setStatus("success");
+                toast.success("Message sent! We will get back to you soon.");
                 form.reset();
             } else {
                 setResult("Error: " + data.message);
                 setStatus("error");
+                toast.error("Your message could not be sent.");
             }
         } catch (error) {
             setResult("Sorry, we couldn't send your message. Please try again.");
             setStatus("error");
+            toast.error("Your message could not be sent.");
         }
     };
 
