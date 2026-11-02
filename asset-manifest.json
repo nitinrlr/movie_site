@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/movie_site/static/css/main.ceb0bb15.css",
-    "main.js": "/movie_site/static/js/main.e53e64a3.js",
+    "main.css": "/movie_site/static/css/main.8aa2abef.css",
+    "main.js": "/movie_site/static/js/main.8d0072fc.js",
     "static/media/avengers-hero.png": "/movie_site/static/media/avengers-hero.a252002f84d52c97ee89.png",
     "static/media/JP_backgrnd.png": "/movie_site/static/media/JP_backgrnd.0bf61db3ae82b733cda0.png",
     "static/media/dune-hero.png": "/movie_site/static/media/dune-hero.d7239c9e4e8fc577921c.png",
@@ -22,11 +22,11 @@
     "static/media/instagram.svg": "/movie_site/static/media/instagram.675445953d01132d1f29cd59349acdcf.svg",
     "index.html": "/movie_site/index.html",
     "static/media/x.svg": "/movie_site/static/media/x.fecf5dd7cac8697bc838177ac3fda15c.svg",
-    "main.ceb0bb15.css.map": "/movie_site/static/css/main.ceb0bb15.css.map",
-    "main.e53e64a3.js.map": "/movie_site/static/js/main.e53e64a3.js.map"
+    "main.8aa2abef.css.map": "/movie_site/static/css/main.8aa2abef.css.map",
+    "main.8d0072fc.js.map": "/movie_site/static/js/main.8d0072fc.js.map"
   },
   "entrypoints": [
-    "static/css/main.ceb0bb15.css",
-    "static/js/main.e53e64a3.js"
+    "static/css/main.8aa2abef.css",
+    "static/js/main.8d0072fc.js"
   ]
 }
