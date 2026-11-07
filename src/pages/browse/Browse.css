@@ -27,6 +27,13 @@
     padding: 0;
 }
 
+/* shows until movies come back from the server */
+.browse .loading {
+    color: var(--color-text-muted);
+    text-align: center;
+    padding: 30px 5%;
+}
+
 .movie-grid {
     display: flex;
     flex-wrap: wrap;
