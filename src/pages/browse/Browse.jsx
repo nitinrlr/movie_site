@@ -45,24 +45,17 @@ const Browse = () => {
             </nav>
             {movies.length === 0 && <p className="loading">Loading movies...</p>}
             <section className="movie-grid">
-                {movies.map((movie) => {
-                    let link = "/browse";
-
-                    if (movie.title === "Jurassic Park") {
-                        link = "/movie";
-                    }
-                    return (
-                        <MovieCard
-                            key={movie._id}
-                            image={server_url + movie.img_name}
-                            title={movie.title}
-                            year={movie.year}
-                            genre={movie.genre}
-                            rating={movie.rating.toFixed(1)}
-                            link={link}
-                        />
-                    );
-                })}
+                {movies.map((movie) => (
+                    <MovieCard
+                        key={movie._id}
+                        image={server_url + movie.img_name}
+                        title={movie.title}
+                        year={movie.year}
+                        genre={movie.genre}
+                        rating={movie.rating.toFixed(1)}
+                        link={"/movie/" + movie._id}
+                    />
+                ))}
             </section>
             <nav className="pagination">
                 <button type="button">Previous</button>

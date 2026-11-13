@@ -18,7 +18,7 @@ const App = () => {
           <Route path="browse" element={<Browse />} />
           <Route path="about" element={<About />} />
           <Route path="login" element={<Login />} />
-          <Route path="movie" element={<Movie />} />
+          <Route path="movie/:id" element={<Movie />} />
         </Route>
       </Routes>
     </HashRouter>

@@ -1,29 +1,62 @@
 import "./Movie.css";
+import {useState, useEffect} from "react";
+import {useParams} from "react-router-dom";
 import CastCard from "../../components/cast-card/CastCard";
 import ReviewCard from "../../components/review-card/ReviewCard";
 import DetailItem from "../../components/detail-item/DetailItem";
 import MovieCard from "../../components/movie-card/MovieCard";
-import jpark from "../../images/posters/jpark.jpg";
-import jaws from "../../images/posters/jaws.jpg";
-import dune from "../../images/posters/dune.jpg";
-import avengers from "../../images/posters/avngers.jpg";
-import spiderman from "../../images/posters/s-man.jpg";
+
+// movies and images come from render server
+const server_url = "https://moviebuzz-backend-fsd2.onrender.com/";
 
 const Movie = () => {
+    // the id at the end of the link, like #/movie/6
+    const {id} = useParams();
+    const [movies, setMovies] = useState([]);
+
+    // runs when the page loads and again when a different movie is clicked
+    useEffect(() => {
+        window.scrollTo(0, 0);
+
+        const getMovies = async () => {
+            const response = await fetch(server_url + "api/movies");
+            setMovies(await response.json());
+        };
+        getMovies();
+    }, [id]);
+
+    if (movies.length === 0) {
+        return <p className="movie-message">Loading movie...</p>;
+    }
+
+    const movie = movies.find((item) => item._id === parseInt(id));
+
+    if (!movie) {
+        return <p className="movie-message">Sorry, we couldn't find that movie.</p>;
+    }
+
+    // 4 other movies for the bottom of the page
+    const otherMovies = movies.filter((item) => item._id !== movie._id).slice(0, 4);
+
+    // darkened poster behind the top of the page
+    const heroStyle = {
+        backgroundImage: `linear-gradient(rgba(8, 8, 16, 0.85), rgba(8, 8, 16, 0.85)), url(${server_url + movie.img_name})`
+    };
+
     return (
         <div className="movie-page">
-            <section className="movie-hero">
-                <img src={jpark} alt="Jurassic Park poster" />
+            <section className="movie-hero" style={heroStyle}>
+                <img src={server_url + movie.img_name} alt={`${movie.title} poster`} />
                 <article className="movie-intro">
                     <p className="movie-label">Featured Movie</p>
-                    <h1>Jurassic Park</h1>
+                    <h1>{movie.title}</h1>
                     <p className="movie-facts">
-                        1993 &nbsp;|&nbsp; 2h 7m &nbsp;|&nbsp; <span className="rating">&#9733; 9.0</span>
+                        {movie.year} &nbsp;|&nbsp; {movie.runtime} &nbsp;|&nbsp; <span className="rating">&#9733; {movie.rating.toFixed(1)}</span>
                     </p>
                     <p className="movie-tags">
-                        <span className="tag">Sci-Fi</span>
-                        <span className="tag">Adventure</span>
-                        <span className="tag">Thriller</span>
+                        {movie.tags.map((tag) => (
+                            <span className="tag" key={tag}>{tag}</span>
+                        ))}
                     </p>
                 </article>
             </section>
@@ -32,65 +65,63 @@ const Movie = () => {
                     <section className="trailer">
                         <h2 className="section-title">Watch the Trailer</h2>
                         <iframe
-                            src="https://www.youtube.com/embed/QWBKEmWWL38"
-                            title="Jurassic Park official trailer"
+                            src={movie.trailer}
+                            title={`${movie.title} official trailer`}
                             referrerPolicy="strict-origin-when-cross-origin"
                             allowFullScreen
                         ></iframe>
                     </section>
                     <section className="synopsis">
                         <h2 className="section-title">Synopsis</h2>
-                        <p>
-                            An island of prehistoric dinosaurs becomes a fight for survival when the park
-                            attractions escape their enclosures. Every step brings new danger, leaving one
-                            question. Who will make it out alive? John Hammond creates a theme park filled
-                            with cloned dinosaurs, but when the power shuts down, a group of scientists and
-                            his grandchildren must escape the island.
-                        </p>
+                        <p>{movie.description}</p>
                     </section>
                     <section className="cast">
                         <h2 className="section-title">Starring Cast</h2>
                         <div className="cast-row">
-                            <CastCard initials="SN" name="Sam Neill" role="Dr. Alan Grant" />
-                            <CastCard initials="LD" name="Laura Dern" role="Dr. Ellie Sattler" />
-                            <CastCard initials="JG" name="Jeff Goldblum" role="Dr. Ian Malcolm" />
-                            <CastCard initials="RA" name="Richard Attenborough" role="John Hammond" />
+                            {movie.cast.map((person) => (
+                                <CastCard
+                                    key={person.name}
+                                    initials={person.name.split(" ").map((word) => word[0]).join("")}
+                                    name={person.name}
+                                    role={person.role}
+                                />
+                            ))}
                         </div>
                     </section>
                     <section className="reviews">
                         <h2 className="section-title">Community Reviews</h2>
-                        <ReviewCard
-                            user="RaptorJeff"
-                            rating="9.5"
-                            text="An absolute masterpiece. The effects still hold up better than most movies made today, and the tension in the kitchen scene is unmatched."
-                        />
-                        <ReviewCard
-                            user="CrayJoMovies"
-                            rating="9.0"
-                            text="A perfect mix of practical effects and computer graphics. The reveal of the first dinosaur is still one of the greatest moments in movie history."
-                        />
-                        <ReviewCard
-                            user="Discover93"
-                            rating="8.5"
-                            text="A classic blockbuster that defined a generation. The score gives me goosebumps every single time."
-                        />
+                        {movie.reviews.map((review) => (
+                            <ReviewCard
+                                key={review.user}
+                                user={review.user}
+                                rating={review.rating.toFixed(1)}
+                                text={review.text}
+                            />
+                        ))}
                     </section>
                 </div>
                 <aside className="movie-details">
                     <h2 className="section-title">Details</h2>
-                    <DetailItem label="Director" value="Steven Spielberg" />
-                    <DetailItem label="Writer" value="Michael Crichton" />
-                    <DetailItem label="Studio" value="Universal Pictures" />
-                    <DetailItem label="Budget" value="63 Million" />
+                    <DetailItem label="Director" value={movie.director} />
+                    <DetailItem label="Writer" value={movie.writer} />
+                    <DetailItem label="Studio" value={movie.studio} />
+                    <DetailItem label="Budget" value={movie.budget} />
                 </aside>
             </div>
             <section className="similar">
                 <h2 className="section-title">You Might Also Like</h2>
                 <div className="similar-row">
-                    <MovieCard image={jaws} title="Jaws" year="1975" genre="Thriller" rating="8.3" link="/movie" />
-                    <MovieCard image={dune} title="Dune: Part Two" year="2024" genre="Sci-Fi" rating="8.0" link="/browse" />
-                    <MovieCard image={avengers} title="The Avengers" year="2012" genre="Action" rating="9.2" link="/browse" />
-                    <MovieCard image={spiderman} title="Spider-Man" year="2021" genre="Action" rating="9.1" link="/browse" />
+                    {otherMovies.map((item) => (
+                        <MovieCard
+                            key={item._id}
+                            image={server_url + item.img_name}
+                            title={item.title}
+                            year={item.year}
+                            genre={item.genre}
+                            rating={item.rating.toFixed(1)}
+                            link={"/movie/" + item._id}
+                        />
+                    ))}
                 </div>
             </section>
         </div>

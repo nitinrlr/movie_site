@@ -33,7 +33,7 @@ const Hero = () => {
                 title="Jurassic Park"
                 description="An island of prehistoric dinosaurs becomes a fight for survival when the park's attractions escape their enclosures. Every step brings new danger, leaving one question. Who will make it out alive?"
                 rating="9.0"
-                link="/movie"
+                link="/movie/6"
                 linkText="Details"
                 hidden={current !== 0}
             />

@@ -18,11 +18,11 @@ const Home = () => {
             <section className="buzzing">
                 <h2 className="section-title">Buzzing Right Now</h2>
                 <div className="movie-row">
-                    <MovieCard image={avengers} title="The Avengers" rating="9.2" link="/movie" />
-                    <MovieCard image={jaws} title="Jaws" rating="8.3" link="/browse" />
-                    <MovieCard image={joker} title="Joker" rating="8.9" link="/browse" />
-                    <MovieCard image={dune} title="Dune" rating="8.0" link="/browse" />
-                    <MovieCard image={spiderman} title="Spider-Man" rating="9.1" link="/browse" />
+                    <MovieCard image={avengers} title="The Avengers" rating="9.2" link="/movie/4" />
+                    <MovieCard image={jaws} title="Jaws" rating="8.3" link="/movie/8" />
+                    <MovieCard image={joker} title="Joker" rating="8.9" link="/movie/3" />
+                    <MovieCard image={dune} title="Dune" rating="8.0" link="/movie/1" />
+                    <MovieCard image={spiderman} title="Spider-Man" rating="9.1" link="/movie/2" />
                     <button className="row-arrow" aria-label="See more movies">&#8250;</button>
                 </div>
             </section>
