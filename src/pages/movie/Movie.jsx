@@ -10,7 +10,7 @@ import MovieCard from "../../components/movie-card/MovieCard";
 const server_url = "https://moviebuzz-backend-fsd2.onrender.com/";
 
 const Movie = () => {
-    // the id at the end of the link, like #/movie/6
+    
     const {id} = useParams();
     const [movies, setMovies] = useState([]);
 
@@ -35,10 +35,8 @@ const Movie = () => {
         return <p className="movie-message">Sorry, we couldn't find that movie.</p>;
     }
 
-    // 4 other movies for the bottom of the page
     const otherMovies = movies.filter((item) => item._id !== movie._id).slice(0, 4);
 
-    // darkened poster behind the top of the page
     const heroStyle = {
         backgroundImage: `linear-gradient(rgba(8, 8, 16, 0.85), rgba(8, 8, 16, 0.85)), url(${server_url + movie.img_name})`
     };
