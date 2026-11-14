@@ -51,18 +51,19 @@ const Movie = () => {
                     <p className="movie-label">Featured Movie</p>
                     <h1>{movie.title}</h1>
                     <p className="movie-facts">
-                        {movie.year} &nbsp;|&nbsp; {movie.runtime} &nbsp;|&nbsp; <span className="rating">&#9733; {movie.rating.toFixed(1)}</span>
+                        {movie.year} &nbsp;|&nbsp; {movie.runtime && <span>{movie.runtime} &nbsp;|&nbsp; </span>}<span className="rating">&#9733; {movie.rating.toFixed(1)}</span>
                     </p>
                     <p className="movie-tags">
-                        {movie.tags.map((tag) => (
+                        {movie.tags && movie.tags.map((tag) => (
                             <span className="tag" key={tag}>{tag}</span>
                         ))}
+                        {!movie.tags && <span className="tag">{movie.genre}</span>}
                     </p>
                 </article>
             </section>
             <div className="movie-body">
                 <div className="movie-main">
-                    <section className="trailer">
+                    {movie.trailer && <section className="trailer">
                         <h2 className="section-title">Watch the Trailer</h2>
                         <iframe
                             src={movie.trailer}
@@ -70,12 +71,12 @@ const Movie = () => {
                             referrerPolicy="strict-origin-when-cross-origin"
                             allowFullScreen
                         ></iframe>
-                    </section>
-                    <section className="synopsis">
+                    </section>}
+                    {movie.description && <section className="synopsis">
                         <h2 className="section-title">Synopsis</h2>
                         <p>{movie.description}</p>
-                    </section>
-                    <section className="cast">
+                    </section>}
+                    {movie.cast && <section className="cast">
                         <h2 className="section-title">Starring Cast</h2>
                         <div className="cast-row">
                             {movie.cast.map((person) => (
@@ -87,8 +88,8 @@ const Movie = () => {
                                 />
                             ))}
                         </div>
-                    </section>
-                    <section className="reviews">
+                    </section>}
+                    {movie.reviews && <section className="reviews">
                         <h2 className="section-title">Community Reviews</h2>
                         {movie.reviews.map((review) => (
                             <ReviewCard
@@ -98,15 +99,15 @@ const Movie = () => {
                                 text={review.text}
                             />
                         ))}
-                    </section>
+                    </section>}
                 </div>
-                <aside className="movie-details">
+                {movie.director && <aside className="movie-details">
                     <h2 className="section-title">Details</h2>
                     <DetailItem label="Director" value={movie.director} />
                     <DetailItem label="Writer" value={movie.writer} />
                     <DetailItem label="Studio" value={movie.studio} />
                     <DetailItem label="Budget" value={movie.budget} />
-                </aside>
+                </aside>}
             </div>
             <section className="similar">
                 <h2 className="section-title">You Might Also Like</h2>

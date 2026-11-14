@@ -3,14 +3,15 @@ import {useState, useEffect} from "react";
 import {Tooltip} from "react-tooltip";
 import Pill from "../../components/pill/Pill";
 import MovieCard from "../../components/movie-card/MovieCard";
+import AddMovieForm from "../../components/add-movie-form/AddMovieForm";
 
 // movies and images come from render server
 const server_url = "https://moviebuzz-backend-fsd2.onrender.com/";
 
 const Browse = () => {
     const [movies, setMovies] = useState([]);
+    const [showForm, setShowForm] = useState(false);
 
-    // runs when page loads
     useEffect(() => {
         const getMovies = async () => {
             const response = await fetch(server_url + "api/movies");
@@ -19,16 +20,35 @@ const Browse = () => {
         getMovies();
     }, []);
 
+    const toggleForm = () => {
+        setShowForm(!showForm);
+    };
+
+    // list updates right away
+    const addMovie = (movie) => {
+        setMovies([...movies, movie]);
+    };
+
+    let formButtonText = "+ Add a Movie";
+
+    if (showForm) {
+        formButtonText = "Close Form";
+    }
+
     return (
         <div className="browse">
             <section className="browse-top">
                 <h1 className="page-title">Explore Movies</h1>
-                <select id="sort">
-                    <option value="newest">Sort: Newest</option>
-                    <option value="rating">Sort: Rating</option>
-                    <option value="title">Sort: A-Z</option>
-                </select>
+                <div className="browse-actions">
+                    <button type="button" className="add-button" onClick={toggleForm}>{formButtonText}</button>
+                    <select id="sort">
+                        <option value="newest">Sort: Newest</option>
+                        <option value="rating">Sort: Rating</option>
+                        <option value="title">Sort: A-Z</option>
+                    </select>
+                </div>
             </section>
+            {showForm && <AddMovieForm serverUrl={server_url} onAdd={addMovie} />}
             <nav className="genre-filter">
                 <ul>
                     <Pill name="All" tip="Every movie in our catalog" active={true} />
